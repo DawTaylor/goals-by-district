@@ -12,7 +12,8 @@ const ax = axios.create({
 export const state = () => ({
   districts: [],
   goals: {},
-  goalDetails: {}
+  goalDetails: {},
+  isLoading: false
 })
 
 export const mutations = {
@@ -24,6 +25,9 @@ export const mutations = {
   },
   setGoal ( state, goal ) {
     state.goalDetails = goal
+  },
+  setLoading ( state, isLoading ) {
+    state.isLoading = isLoading
   }
 }
 
@@ -68,5 +72,11 @@ export const actions = {
     } catch (err) {
       console.error(err)
     }
+  },
+  toggleLoading({ commit, state }) {
+    const isLoading = state.isLoading
+    console.log(isLoading, state)
+
+    return commit('setLoading', !isLoading)
   }
 }

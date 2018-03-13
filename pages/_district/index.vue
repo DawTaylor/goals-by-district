@@ -17,7 +17,6 @@ export default {
   },
   computed: {
     ...mapState([
-      'districts',
       'goals'
     ]),
     linkPrefix() {
@@ -29,13 +28,14 @@ export default {
   },
   methods: {
     ...mapActions([
-      'fetchDistricts',
-      'fetchGoals'
+      'fetchGoals',
+      'toggleLoading'
     ])
   },
-  mounted() {
-    this.fetchDistricts()
-    this.fetchGoals(this.$route.params.district)
+  async mounted() {
+    this.toggleLoading()
+    await this.fetchGoals(this.$route.params.district)
+    this.toggleLoading()
   }
 }
 </script>

@@ -24,11 +24,14 @@ export default {
   },
   methods: {
     ...mapActions([
-      'fetchGoal'
+      'fetchGoal',
+      'toggleLoading'
     ])
   },
-  mounted() {
-    this.fetchGoal(this.$route.params.goal)
+  async mounted() {
+    this.toggleLoading()
+    await this.fetchGoal(this.$route.params.goal)
+    this.toggleLoading()
   }
 }
 </script>

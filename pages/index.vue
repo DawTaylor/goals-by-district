@@ -35,11 +35,14 @@ export default {
   },
   methods: {
     ...mapActions([
-      'fetchDistricts'
+      'fetchDistricts',
+      'toggleLoading'
     ])
   },
-  mounted() {
-    this.fetchDistricts()
+  async mounted() {
+    this.toggleLoading()
+    await this.fetchDistricts()
+    this.toggleLoading()
   }
 }
 </script>
