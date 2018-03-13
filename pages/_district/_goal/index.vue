@@ -1,16 +1,25 @@
 <template lang="pug">
-  section.container
-    h1 Goal details
+  div
+    section.container
+      h1 Goal details
+    card.card
+      h2 {{ goalDetails.name }}
+      p {{ goalDetails.description }}
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
 
+import Card from '~/components/Card'
+
 export default {
   name: 'GoalDetails',
+  components: {
+    Card
+  },
   computed: {
     ...mapState([
-      'goal'
+      'goalDetails'
     ])
   },
   methods: {
@@ -23,3 +32,15 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus" scoped>
+.card
+  margin-top 15px
+
+  @media screen and (min-width 768px)
+    width 720px
+  @media screen and (min-width 1024px)
+    width 960px
+  @media screen and (min-width 1280px)
+    width 1180px
+</style>

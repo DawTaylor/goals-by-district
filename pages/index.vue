@@ -1,6 +1,8 @@
 <template lang="pug">
-  .container
-    input(type='text' v-model='term' placeholder='Filter districts')
+  div
+    .container
+      .row
+        input.filter(type='text' v-model='term' placeholder='Filter districts')
     table-list(:data='visibleDistricts', :fields='["name"]', :linkPrefix='linkPrefix')
 </template>
 
@@ -8,10 +10,12 @@
 import { mapState, mapActions } from 'vuex'
 
 import TableList from '~/components/TableList'
+import Card from '~/components/Card'
 
 export default {
   components: {
-    TableList
+    TableList,
+    Card
   },
   data() {
     return {
@@ -40,5 +44,10 @@ export default {
 }
 </script>
 
-<style>
+<style lang="stylus">
+.filter
+  padding 10px
+  border 1px solid #aaa
+  border-radius 5px
+  font-size 12pt
 </style>

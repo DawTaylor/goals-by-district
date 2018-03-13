@@ -1,6 +1,7 @@
 <template lang="pug">
-  section.container 
-    h1 district details
+  div
+    section.container 
+      h1 District Goals
     table-list(:data='districtGoals', :fields='["name"]', :linkPrefix='linkPrefix')
 </template>
 
