@@ -1,8 +1,18 @@
-# eokoe
+# Eokoe Goals by District challenge
 
-> Nuxt.js project
+## About
 
-## Build Setup
+This app was built using VueJS over NuxtJS to take advantage of server side rendering features.
+
+This app uses axios do fetch data from the provided REST endpoint. It also uses Vuex actions to fetch these data, so the Vuex store is the single source of truth.
+
+To improve user experience on this app, the data is cached on browser's IndexDB using LocalForage abstraction library.
+
+To improve productivity Pug and Stylus were used as HTML and CSS pre-processors, respectively.
+
+It was also built using CSS flexbox and CSS grid features.
+
+## How to run
 
 ``` bash
 # install dependencies
