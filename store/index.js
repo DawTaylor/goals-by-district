@@ -23,7 +23,7 @@ export const mutations = {
     state.goals = goals
   },
   setGoal ( state, goal ) {
-    state.goal = goal
+    state.goalDetails = goal
   }
 }
 
