@@ -29,6 +29,11 @@ export default {
     ...mapState([
       'isLoading'
     ])
+  },
+  head () {
+    return {
+      title: 'Eokoe'
+    }
   }
 }
 </script>

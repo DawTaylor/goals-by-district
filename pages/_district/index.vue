@@ -15,6 +15,11 @@ export default {
   components: {
     TableList
   },
+  head() {
+    return {
+      title: `Eokoe - Goals list`
+    }
+  },
   computed: {
     ...mapState([
       'goals'

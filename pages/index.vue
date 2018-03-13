@@ -17,6 +17,11 @@ export default {
     TableList,
     Card
   },
+  head() {
+    return {
+      title: 'Eokoe - Districts list'
+    }
+  },
   data() {
     return {
       term: ''

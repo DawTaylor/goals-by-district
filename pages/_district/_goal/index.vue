@@ -17,6 +17,11 @@ export default {
   components: {
     Card
   },
+  head() {
+    return {
+      title: 'Eokoe - Goal details'
+    }
+  },
   computed: {
     ...mapState([
       'goalDetails'
