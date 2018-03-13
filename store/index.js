@@ -65,7 +65,6 @@ export const actions = {
   },
   async fetchGoal ({ commit }, goal) {
     try {
-      console.log(goal)
       commit('setGoal', {})
       const { data: goalDetails } = await ax.get(`/goals/${goal}`)
       return commit('setGoal', goalDetails)
@@ -75,7 +74,6 @@ export const actions = {
   },
   toggleLoading({ commit, state }) {
     const isLoading = state.isLoading
-    console.log(isLoading, state)
 
     return commit('setLoading', !isLoading)
   }
